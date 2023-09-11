@@ -13,21 +13,21 @@ python ./examples/speculative_inference.py \
 For example, 
 ```bash
 python ./examples/speculative_inference.py \ 
-  --model gpt2-xl 
-  --draft_model gpt2 
-  --temperature 0.3 
-  --gamma 5
-  --max_new_tokens 512
+  --model gpt2-xl \
+  --draft_model gpt2 \
+  --temperature 0.3 \
+  --gamma 5 \
+  --max_new_tokens 512 \
   --gpu 0
 ```
 Another example,
 ```bash
 python ./examples/speculative_inference.py \ 
-  --model /home/eric/Documents/models/gpt2-xl 
-  --draft_model /home/eric/Documents/models/gpt2 
-  --temperature 0 
-  --gamma 3
-  --max_new_tokens 1024
+  --model /home/eric/Documents/models/gpt2-xl \
+  --draft_model /home/eric/Documents/models/gpt2 \
+  --temperature 0 \
+  --gamma 3 \
+  --max_new_tokens 1024 \
   --gpu 7
 ```
 ## Parameter Instruction
@@ -53,7 +53,7 @@ python ./examples/speculative_inference.py \
 ## Experiments
 We tested the speculative inference using the first 100 inputs from alpaca test dataset as prompts. When `model=gpt2-xl`, `draft_model=gpt2`, `temperature=0.`, `max_new_tokens=512`, we observed the following acceleration:
 
-|gamma|speedup (inference time)|speed up (num of forwards)
+|gamma|speedup (inference time)|speedup (num of forwards)
 |--|--|--|
 |1|1.75x|1.96x|
 |2|2.29x|2.89x|
